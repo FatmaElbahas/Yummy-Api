@@ -189,11 +189,10 @@ input {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
-/* سايد بار */
 .leftside {
   position: fixed !important;
   top: 0;
-  left: -250px; /* مخفي على اليسار */
+  left: -250px;  /* مخفي على الشمال */
   width: 250px;
   height: 100vh;
   background-color: black;
@@ -204,49 +203,34 @@ input {
 }
 
 .leftside.show {
-  left: 0;
+  left: 0;  /* يظهر من الشمال */
 }
 
-/* المحتوى */
 .content-wrapper {
   transition: margin-left 0.5s ease-in-out;
 }
 
-/* تحريك المحتوى للشاشات الكبيرة فقط */
-@media (min-width: 992px) {
-  .content-wrapper.shifted {
-    margin-left: 250px;
-  }
+.content-wrapper.shifted {
+  margin-left: 250px; /* يتحرك يمين */
 }
 
-/* في الشاشات الصغيرة، السايدبار يصبح كامل العرض ويغطي المحتوى */
+/* في الشاشات الصغيرة كمان */
 @media (max-width: 991.98px) {
   .leftside {
-    width: 100%;
-    left: -100vw; /* مخفي خارج الشاشة */
+    width: 250px;  /* نفس عرض الكبير */
+    left: -250px;  /* مخفي على الشمال */
   }
+
   .leftside.show {
-    left: 0;
+    left: 0; /* يظهر من الشمال */
   }
+
   .content-wrapper.shifted {
-    margin-left: 0; /* لا يتحرك المحتوى */
+    margin-left: 250px; /* يتحرك يمين */
   }
 }
 
-/* منع التمرير عند فتح السايدبار على الشاشات الصغيرة */
+/* لمنع التمرير */
 body.no-scroll {
   overflow: hidden;
-}
-/* في الشاشات الصغيرة كمان، خلي المحتوى يتحرك */
-@media (max-width: 991.98px) {
-  .content-wrapper.shifted {
-    margin-left: 250px; /* خليها تتحرك */
-  }
-  .leftside {
-    width: 250px; /* خلي السايد بار عرض ثابت زي الكبير */
-    left: -250px;
-  }
-  .leftside.show {
-    left: 0;
-  }
 }
