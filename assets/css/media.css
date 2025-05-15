@@ -1,5 +1,5 @@
- @media (max-width: 576px) {
-   .container {
+@media (max-width: 576px) {
+   .custom-container .container {
     max-width: 540px;
     padding-left: 90px !important;
      text-align: center !important;
@@ -11,6 +11,14 @@
     max-width: 720px;
         padding-left: 80px !important;
       text-align: center !important;
+            .leftside {
+    width: 100%;
+    left: -100%;
+  }
+
+  .leftside.show {
+    left: 0;
+  }
   }
 }
 
@@ -19,6 +27,14 @@
     max-width: 960px;
      padding-left: 90px !important;
       text-align: center !important;
+        .leftside {
+    width: 100%;
+    left: -100%;
+  }
+
+  .leftside.show {
+    left: 0;
+  }
   }
 } 
 /* @media (min-width: 1200px) {
