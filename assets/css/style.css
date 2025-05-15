@@ -113,6 +113,36 @@ input {
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
 }
+/* افتراضي: السايد بار مغلق */
+.leftside {
+  position: fixed !important;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  transition: left 0.5s ease-in-out;
+  z-index: 1040;
+}
+
+/* لما يتفتح */
+.leftside.show {
+  left: 0;
+}
+
+/* المحتوى الرئيسي */
+.content-wrapper {
+  transition: margin-left 0.5s ease-in-out;
+}
+
+/* إزاحة المحتوى بس في الشاشات الكبيرة */
+@media (min-width: 992px) {
+  .content-wrapper.shifted {
+    margin-left: 250px;
+  }
+}
 @keyframes mulShdSpin {
   0%,
   100% {
